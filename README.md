@@ -60,6 +60,7 @@ automatically — no restart of the OS needed, just start a new session.
 | `intraday-trailing-stop` | Intraday trailing stop-loss trading automation |
 | `twitter-post-generation-skill` | Turns a blog post URL into a designer-focused X/Twitter thread |
 | `twitter-posting-skill` | End-to-end research → draft → post pipeline for Blink Studio's X account |
+| `local-website-hosting` | Shares a locally-running site/app via a live public URL using a Cloudflare Quick Tunnel — no upload, no account, data never leaves the machine. Link only works while the machine + tunnel process are running. |
 
 ## Note
 
