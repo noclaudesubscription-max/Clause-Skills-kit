@@ -86,10 +86,18 @@ Source: [anthropics/claude-code plugins](https://github.com/anthropics/claude-co
 
 | Command | Purpose |
 |---|---|
-| `/code-review` | Automated PR code review using multiple specialized agents with confidence-based scoring. Needs `gh` CLI. |
-| `/commit` | Creates a single git commit from the current staged/unstaged changes |
-| `/commit-push-pr` | Commits, pushes, and opens a PR in one step |
+| `/code-review` | Automated PR code review using multiple specialized agents with confidence-based scoring. Needs `gh` CLI, authenticated. |
+| `/commit` | Creates a single git commit from the current staged/unstaged changes. No `gh` needed — purely local. |
+| `/commit-push-pr` | Commits, pushes, and opens a PR in one step. Needs `gh` CLI, authenticated, and a folder that's a git repo with a GitHub remote already configured. |
 | `/clean_gone` | Cleans up local branches whose remote has been deleted |
+
+`/code-review` and `/commit-push-pr` talk to GitHub directly (reading/posting PRs), so they need the GitHub CLI installed and logged in on the new machine:
+
+```powershell
+winget install --id GitHub.cli
+gh auth login
+```
+(`gh auth login` opens a browser for a one-time device code — no manual token handling needed.) `/commit` doesn't need any of this since it only touches the local git repo.
 
 **Windows (PowerShell):**
 ```powershell
