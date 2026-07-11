@@ -63,6 +63,47 @@ automatically — no restart of the OS needed, just start a new session.
 | `local-website-hosting` | Shares a locally-running site/app via a live public URL using a Cloudflare Quick Tunnel — no upload, no account, data never leaves the machine. Link only works while the machine + tunnel process are running. |
 | `html-creative` | Compresses a full web app + its data into one self-contained HTML file (all JS/CSS/data inlined) that opens via `file://` with zero server and zero network requests — a portable snapshot, not a live view. |
 
+### Ponytail ("laziest solution that works")
+Source: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)
+
+| Skill | Purpose |
+|---|---|
+| `ponytail` | Main mode — pushes toward the shortest, simplest solution: stdlib/native features before dependencies, question whether code needs to exist at all |
+| `ponytail-review` | Code review focused only on over-engineering — what to delete |
+| `ponytail-audit` | Whole-repo audit for over-engineering — ranked list of what to cut |
+| `ponytail-debt` | Harvests `ponytail:` comments into a tracked debt ledger |
+| `ponytail-gain` | Scoreboard of ponytail's measured impact (less code/cost, more speed) |
+| `ponytail-help` | Quick reference for all ponytail commands |
+
+## Custom slash commands
+
+Unlike the skills above (which live in `skills/` and are picked up
+automatically based on context), the files in `commands/` are custom
+**slash commands** — install them into `~/.claude/commands/` instead of
+`~/.claude/skills/`, and invoke them explicitly (e.g. `/commit`).
+
+Source: [anthropics/claude-code plugins](https://github.com/anthropics/claude-code/tree/main/plugins)
+
+| Command | Purpose |
+|---|---|
+| `/code-review` | Automated PR code review using multiple specialized agents with confidence-based scoring. Needs `gh` CLI. |
+| `/commit` | Creates a single git commit from the current staged/unstaged changes |
+| `/commit-push-pr` | Commits, pushes, and opens a PR in one step |
+| `/clean_gone` | Cleans up local branches whose remote has been deleted |
+
+**Windows (PowerShell):**
+```powershell
+Copy-Item -Path "path\to\Skills Starter Pack\commands\*" -Destination "$env:USERPROFILE\.claude\commands\" -Recurse -Force
+```
+**macOS / Linux (bash):**
+```bash
+cp -r "path/to/Skills Starter Pack/commands/"* ~/.claude/commands/
+```
+
+> Note: `anthropics/claude-code/plugins` also has a `frontend-design`
+> plugin, but its skill content is byte-identical to the `frontend-design`
+> skill already in this pack — nothing extra to install there.
+
 ## Note
 
 `accesslint-*` needs its MCP server, and `framer*` skills need the Framer
