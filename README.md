@@ -80,7 +80,12 @@ Source: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)
 |---|---|
 | `token-optimization` | Minimizes token/context usage while preserving correctness — narrow file reads, proportional verification, compact final responses. |
 
-> ⚠️ This one has `disable-model-invocation: true` in its frontmatter, unlike every other skill in this pack. It will **not** auto-trigger based on matching your request — it only runs when explicitly invoked (e.g. `/token-optimization <task>`), regardless of which machine it's installed on.
+> Like every other skill in this pack, this one auto-triggers whenever a
+> request matches its description (efficient execution, lower usage,
+> narrow scope, concise implementation) — no explicit `/token-optimization`
+> invocation needed. It does not override every single request
+> unconditionally; a request that doesn't match the description (e.g. a
+> plain factual question) won't trigger it.
 
 ## Custom slash commands
 

@@ -2,7 +2,6 @@
 name: token-optimization
 description: Minimize Claude Code token and context usage while preserving correctness. Use when the user requests efficient execution, lower usage, narrow codebase exploration, or concise implementation.
 argument-hint: [task or scope]
-disable-model-invocation: true
 ---
 
 # Token-optimized execution
