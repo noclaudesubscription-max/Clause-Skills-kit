@@ -75,6 +75,13 @@ Source: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)
 | `ponytail-gain` | Scoreboard of ponytail's measured impact (less code/cost, more speed) |
 | `ponytail-help` | Quick reference for all ponytail commands |
 
+### Token optimization
+| Skill | Purpose |
+|---|---|
+| `token-optimization` | Minimizes token/context usage while preserving correctness — narrow file reads, proportional verification, compact final responses. |
+
+> ⚠️ This one has `disable-model-invocation: true` in its frontmatter, unlike every other skill in this pack. It will **not** auto-trigger based on matching your request — it only runs when explicitly invoked (e.g. `/token-optimization <task>`), regardless of which machine it's installed on.
+
 ## Custom slash commands
 
 Unlike the skills above (which live in `skills/` and are picked up
