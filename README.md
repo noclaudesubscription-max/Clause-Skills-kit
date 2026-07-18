@@ -62,6 +62,7 @@ automatically — no restart of the OS needed, just start a new session.
 | `twitter-posting-skill` | End-to-end research → draft → post pipeline for Blink Studio's X account |
 | `local-website-hosting` | Shares a locally-running site/app via a live public URL using a Cloudflare Quick Tunnel — no upload, no account, data never leaves the machine. Link only works while the machine + tunnel process are running. |
 | `html-creative` | Compresses a full web app + its data into one self-contained HTML file (all JS/CSS/data inlined) that opens via `file://` with zero server and zero network requests — a portable snapshot, not a live view. |
+| `website-downloader` | Recursively mirrors an existing website (including dynamic Vite chunks, WebP thumbnail permutations, and API payloads), then serves it locally via a multi-threaded, HTTP Range-capable server with POST-request caching — for running a site fully offline. Includes `scripts/crawler.py`, `download_api.py`, `server.py`. |
 
 ### Ponytail ("laziest solution that works")
 Source: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)
